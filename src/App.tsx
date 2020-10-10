@@ -2,28 +2,46 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-import List  from "./components/List";
-import {TodoListButton} from "./components/AddButton"
+import IncrediencesList  from "./components/ListIncredinences";
+import {TodoListButton} from "./components/ButtonClosePizza"
+import {InputIncrediences} from "./components/InputIncrediences"
+import {InputDough} from "./components/InputDough"
+import {InputSize} from "./components/InputSize"
 
-
+import {pricesIngredients} from "./config/prices";
 
 
 export default function App() {
-  const [todos, setTodos] = useState<Array<Todo>>(['123','456']);
-  const addTodo: AddTodo = (pizza) => {
-    setTodos([...todos, pizza]);
-  /*
-  newTodo.trim() !== "" &&
-  setTodos([...todos, { text: newTodo, complete: false }]);
-  */
-  console.log('add '+pizza);
-  };
+  const plainPizza: Pizza = {dough:1,size:1,incrediences:[],price:0}
+  const [pizza, setPizza] = useState<Pizza>(plainPizza);
+
+  const changeIncrediences:ChangeIncrediences=async(incrediencesInput)=>{
+    let incrediences:Array<Incredience> = incrediencesInput.split(",").map(Number);
+    setPizza(prevState => ({ ...prevState, incrediences:incrediences}));
+    calcPrice();
+  } 
+  const calcPrice = ():void=>{
+    let total = 4.6;
+    pizza.incrediences.forEach(i=>{
+      if(pricesIngredients[i]){
+        total += pricesIngredients[i];
+      }
+    });    
+    setPizza(prevState => ({ ...prevState, price:total.toFixed(2)}));
+  }
+  const closePizza = ():void=>{
+    setPizza(plainPizza);
+  }
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <List item={todos} />
-      <TodoListButton addTodo={addTodo}/>
-      <StatusBar style="auto" />
+      <Text>PizzaLabCalc</Text>
+      <InputDough pizza={pizza} />
+      <InputSize pizza={pizza} />
+      <IncrediencesList pizza={pizza} />
+      <Text>Total: {pizza.price}€</Text>
+      <InputIncrediences changeIncrediences={changeIncrediences}/>
+      <TodoListButton closePizza={closePizza}/>
+
     </View>
   );
 }
