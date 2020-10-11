@@ -1,6 +1,5 @@
-
 import React, { useState, ChangeEvent, FormEvent } from "react";
-import {doughNames,doughPrices} from "../config/prices";
+import {doughNames,doughPrices} from "../../config/prices";
 
 interface InputDoughtProps {
   pizza: Pizza,

@@ -1,3 +1,17 @@
+const drinks = [
+  {
+    name: 'Cola',
+    price: 1.6
+  },
+  {
+    name: 'Beer',
+    price: 2
+  }
+
+]
+
+
+
 // Prices of the proven compounds (bewaehrte Verbindung)
 const pricesCompounds = {
   0: 0,
@@ -189,4 +203,4 @@ const pricesIngredients:Incredience = {
   37: 1.5,
   38: 1.5,
 };
-export {pricesIngredients,namesIngredients, doughPrices, doughNames, sizeNames,sizePrizes,typeNames,typePrices};
+export {pricesIngredients,namesIngredients, doughPrices, doughNames, sizeNames,sizePrizes,typeNames,typePrices, drinks};

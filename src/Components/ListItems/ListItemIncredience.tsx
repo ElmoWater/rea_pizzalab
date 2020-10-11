@@ -1,5 +1,5 @@
 import React from "react";
-import {pricesIngredients,namesIngredients} from "../config/prices";
+import {pricesIngredients,namesIngredients} from "../../config/prices";
 
 interface TodoListItemProps {
   incredience:Incredience

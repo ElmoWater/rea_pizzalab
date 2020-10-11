@@ -1,11 +1,11 @@
 
 import React, { useState, ChangeEvent, FormEvent } from "react";
 
-interface AddTodoFormProps {
+interface ClosePizzaButtonProps {
   closePizza: AddTodo;
 }
 
-export const TodoListButton: React.FC<AddTodoFormProps> = ({ closePizza }) => {
+export const ButtonClosePizza: React.FC<ClosePizzaButtonProps> = ({ closePizza }) => {
   const [newTodo, setNewTodo] = useState<string>("");
 
   const handleSubmit = (e: FormEvent<HTMLButtonElement>) => {
