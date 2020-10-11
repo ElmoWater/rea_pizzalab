@@ -1,12 +1,45 @@
 // Prices of the proven compounds (bewaehrte Verbindung)
 const pricesCompounds = {
+  0: 0,
   1: 1.7,
   2: 2.4,
   3: 2.5,
   4: 2.1,
   5: 2.9,
-  6: 3.6
+  6: 3.6,
+  7: 1.6,
+  8: 0.6 
 };
+
+interface NamesTypes {
+  [k: number]: string
+}
+const typeNames:NamesTypes = {
+  0: 'Base',
+  1: '1',
+  2: '2',
+  3: '3',
+  4: '4',
+  5: '5',
+  6: '6',
+  7: 'Super Surprise',
+  8: 'Schokopizza',
+}
+interface PricesTypes {
+  [k: number]: number
+}
+const typePrices:PricesTypes = {
+  0: 0,
+  1: 1.7,
+  2: 2.4,
+  3: 2.5,
+  4: 2.1,
+  5: 2.9,
+  6: 3.6,
+  7: 1.6,
+  8: 0.6 
+}
+
 // Ingrediends of proven compounds to check for missing ones
 const ingredientsCompounds = {
   1: [1, 12, 8, 20],
@@ -30,7 +63,7 @@ interface SizePrizes {
 }
 const sizePrizes:SizePrizes = {
   1: 2.9,
-  2: 2.4,
+  2: 4.9,
   3: 6.9
 }
 
@@ -39,15 +72,16 @@ interface NamesDough {
 }
 const doughNames:NamesDough = {
   1: 'wheat',
-  2: 'glutenfree'
+  2: 'glutenfree',
+  3: 'spelt'
 }
 interface PricesDough {
   [k: string]: number
 }
 const doughPrices:PricesDough = {
-  1: 2.9,
-  2: 2.4,
-  3: 6.9
+  1: 0,
+  2: 3,
+  3: 0.5
 }
 const prices = {
   // base prices
@@ -155,4 +189,4 @@ const pricesIngredients:Incredience = {
   37: 1.5,
   38: 1.5,
 };
-export {pricesIngredients,namesIngredients, doughPrices, doughNames, sizeNames,sizePrizes};
+export {pricesIngredients,namesIngredients, doughPrices, doughNames, sizeNames,sizePrizes,typeNames,typePrices};

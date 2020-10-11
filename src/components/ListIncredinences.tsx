@@ -1,19 +1,19 @@
 import React from "react";
 //import { Todo, ToggleComplete } from "./types";
-import { TodoListItem } from "./ListItemIncredience";
+import { IncredienceItem } from "./ListItemIncredience";
 
 
-interface TodoListProps {
+interface IncrediencesListProps {
   pizza:Pizza
 }
 
-const TodoList: React.FC<TodoListProps> = ({pizza}) => {
+const IncrediencesList: React.FC<IncrediencesListProps> = ({pizza}) => {
   return (
     <ul>
-    {pizza.incrediences.map(incredience => (
-        <TodoListItem incredience={incredience} />
+    {pizza.incrediences.map((incredience, index) => (
+        <IncredienceItem key={index} incredience={incredience} />
     ))}
   </ul>
   );
 };
-export default TodoList;
+export default IncrediencesList;
