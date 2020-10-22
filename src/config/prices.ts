@@ -1,11 +1,19 @@
 const drinks = [
   {
-    name: 'Cola',
+    name: 'Cola (1,60€)',
     price: 1.6
   },
   {
-    name: 'Beer',
+    name: 'Beer (2,00€)',
     price: 2
+  },
+  {
+    name: 'Getränk (1,40€)',
+    price: 1.4
+  },
+  {
+    name: 'Getränk (1,50€)',
+    price: 1.5
   }
 
 ]

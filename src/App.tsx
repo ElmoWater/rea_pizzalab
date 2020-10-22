@@ -1,6 +1,6 @@
-import { StatusBar } from 'expo-status-bar';
 import React, { useState,useEffect } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+
 
 import ListIncrediences  from "./Components/Lists/ListIncredinences";
 import ListPizzas  from "./Components/Lists/ListPizzas";
@@ -17,6 +17,10 @@ import {InputDrinks} from "./Components/Inputs/InputDrinks";
 import {formatPrice} from "./Controllers/PriceController";
 import {pricesIngredients,sizePrizes,doughPrices,typePrices,drinks} from "./config/prices";
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button } from 'reactstrap';
+import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
+import ToggleButton from 'react-bootstrap/ToggleButton';
 
 export default function App() {
   //VARIABLES
@@ -91,8 +95,9 @@ export default function App() {
     setIncrediences("");
   }
   return (
-    <View style={styles.container}>
-      <Text>PizzaLabCalc</Text>
+    <div>    
+
+    <Text>PizzaLabCalc</Text>
       <InputDough changeDough={changeDough} pizza={pizza} />
       <InputSize changeSize={changeSize} pizza={pizza} />
       <InputType changeType={changeType} pizza={pizza} />
@@ -105,7 +110,8 @@ export default function App() {
       <ListPizzas order={order} />
       <InputDrinks addDrinkToOrder={addDrinkToOrder} />
       <ButtonCloseOrder closeOrder={closeOrder}/>
-    </View>
+    </div>
+
   );
 }
 

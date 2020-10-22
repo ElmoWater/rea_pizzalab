@@ -6,22 +6,34 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "webbuild": "expo build:web"
+    "webbuild": "expo build:web",
+    "test": "jest",
+    "test:watch": "npm test --watch",
+    "coverage": "npm run test --coverage"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "bootstrap": "^4.5.3",
     "expo": "~39.0.2",
     "expo-status-bar": "~1.0.2",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
+    "prettier": "^2.1.2",
+    "react": "^16.14.0",
+    "react-bootstrap": "^1.4.0",
+    "react-dom": "^16.14.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.3.tar.gz",
-    "react-native-web": "~0.13.12"
+    "react-native-testing-library": "^6.0.0",
+    "react-native-web": "~0.13.12",
+    "reactstrap": "^8.6.0"
   },
   "devDependencies": {
-    "react-native-web": "~0.13.7",
     "@types/react": "~16.9.35",
     "@types/react-dom": "~16.9.8",
     "@types/react-native": "~0.63.2",
+    "@types/reactstrap": "^8.5.1",
+    "react-native-web": "~0.13.7",
     "typescript": "~3.9.5"
   },
-  "private": true
+  "private": true,
+  "format": "prettier --write 'src/**/*.{ts,tsx}'",
+  "format:check": "prettier -c 'src/**/*.{ts,tsx}'"
 }
