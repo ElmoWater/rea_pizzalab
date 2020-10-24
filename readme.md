@@ -9,4 +9,4 @@ npm start
 
 ## Deploy
 
-expo build:web
+npm run webbuild

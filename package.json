@@ -6,7 +6,7 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "webbuild": "expo build:web",
+    "webbuild": "expo build:web && rm -rf ./docs && mv ./web-build docs",
     "test": "jest",
     "test:watch": "npm test --watch",
     "coverage": "npm run test --coverage"
@@ -35,5 +35,6 @@
   },
   "private": true,
   "format": "prettier --write 'src/**/*.{ts,tsx}'",
-  "format:check": "prettier -c 'src/**/*.{ts,tsx}'"
+  "format:check": "prettier -c 'src/**/*.{ts,tsx}'",
+  "homepage": "/docs"
 }
