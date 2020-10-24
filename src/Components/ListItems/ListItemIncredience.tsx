@@ -6,8 +6,8 @@ interface TodoListItemProps {
 }
 export const IncredienceItem: React.FC<TodoListItemProps> = ({ incredience }) => {
   return (
-    <li>
-      { namesIngredients[incredience] } ({ pricesIngredients[incredience] } €)
-    </li>
+    <span>
+      + { namesIngredients[incredience] } ({ pricesIngredients[incredience] } €) 
+    </span>
   );
 };

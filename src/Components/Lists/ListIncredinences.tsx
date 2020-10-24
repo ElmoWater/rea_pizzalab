@@ -9,11 +9,11 @@ interface IncrediencesListProps {
 
 const IncrediencesList: React.FC<IncrediencesListProps> = ({pizza}) => {
   return (
-    <ul>
-    {pizza.incrediences.map((incredience, index) => (
+    <div>&nbsp;
+      {pizza.incrediences.map((incredience, index) => (
         <IncredienceItem key={index} incredience={incredience} />
-    ))}
-  </ul>
+      ))}
+    </div>
   );
 };
 export default IncrediencesList;

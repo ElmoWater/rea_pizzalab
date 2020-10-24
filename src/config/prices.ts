@@ -1,11 +1,7 @@
 const drinks = [
   {
-    name: 'Cola (1,60€)',
-    price: 1.6
-  },
-  {
-    name: 'Beer (2,00€)',
-    price: 2
+    name: 'Getränk (1,00€)',
+    price: 1
   },
   {
     name: 'Getränk (1,40€)',
@@ -14,8 +10,15 @@ const drinks = [
   {
     name: 'Getränk (1,50€)',
     price: 1.5
-  }
-
+  },
+  {
+    name: 'Getränk (1,60€)',
+    price: 1.6
+  },
+  {
+    name: 'Getränk (2,00€)',
+    price: 2
+  },
 ]
 
 

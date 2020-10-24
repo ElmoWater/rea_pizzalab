@@ -1,5 +1,6 @@
 
 import React, { useState, ChangeEvent, FormEvent } from "react";
+import { Button } from 'reactstrap';
 
 interface CloseOrderButtonProps {
   closeOrder: AddTodo;
@@ -12,6 +13,6 @@ export const ButtonCloseOrder: React.FC<CloseOrderButtonProps> = ({ closeOrder }
   };
 
   return (
-    <button type="submit" onClick={handleSubmit}>Close Order</button>
+    <Button type="submit" onClick={handleSubmit} className="mt-5">Close Order</Button>
   );
 };

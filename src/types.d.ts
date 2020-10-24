@@ -24,4 +24,4 @@ type Order = {
   foods: Array<Pizza>,
   drinks: Array<Drink>,
   total: float
-}
+} 

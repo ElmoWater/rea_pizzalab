@@ -1,4 +1,6 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
+import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
+import ToggleButton from 'react-bootstrap/ToggleButton';
 import {typeNames, typePrices} from "../../config/prices";
 
 interface InputTypeProps {
@@ -14,16 +16,20 @@ export const InputType: React.FC<InputTypeProps> = ({ pizza,changeType }) => {
   return (
     <div>
       <form>
-        <input type="radio" value="0" name="type" checked={pizza.type === 0} onChange={handleChange} /> {typeNames[0]} 
-        <input type="radio" value="1" name="type" checked={pizza.type === 1} onChange={handleChange} /> {typeNames[1]}
-        <input type="radio" value="2" name="type" checked={pizza.type === 2} onChange={handleChange} /> {typeNames[2]} 
-        <input type="radio" value="3" name="type" checked={pizza.type === 3} onChange={handleChange} /> {typeNames[3]}
-        <input type="radio" value="4" name="type" checked={pizza.type === 4} onChange={handleChange} /> {typeNames[4]}
-        <input type="radio" value="5" name="type" checked={pizza.type === 5} onChange={handleChange} /> {typeNames[5]}
-        <input type="radio" value="6" name="type" checked={pizza.type === 6} onChange={handleChange} /> {typeNames[6]}
-        <input type="radio" value="7" name="type" checked={pizza.type === 7} onChange={handleChange} /> {typeNames[7]}
-        <input type="radio" value="8" name="type" checked={pizza.type === 8} onChange={handleChange} /> {typeNames[8]}
+        <ToggleButtonGroup type='radio' name='size' defaultValue={'0'} className="mt-1">
+          <ToggleButton value={'0'} onChange={handleChange} >{typeNames[0]}</ToggleButton>
+          <ToggleButton value={'1'} onChange={handleChange} >{typeNames[1]}</ToggleButton>
+          <ToggleButton value={'2'} onChange={handleChange} >{typeNames[2]}</ToggleButton>
+          <ToggleButton value={'3'} onChange={handleChange} >{typeNames[3]}</ToggleButton>
+          <ToggleButton value={'4'} onChange={handleChange} >{typeNames[4]}</ToggleButton>
+          <ToggleButton value={'5'} onChange={handleChange} >{typeNames[5]}</ToggleButton>
+          <ToggleButton value={'6'} onChange={handleChange} >{typeNames[6]}</ToggleButton>
+          <ToggleButton value={'7'} onChange={handleChange} >{typeNames[7]}</ToggleButton>
+          <ToggleButton value={'8'} onChange={handleChange} >{typeNames[8]}</ToggleButton>
+        </ToggleButtonGroup>
       </form>
     </div>
   );
 };
+
+

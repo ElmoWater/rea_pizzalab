@@ -12,7 +12,7 @@ interface InputDoughtProps {
 export const InputDough: React.FC<InputDoughtProps> = ({ pizza,changeDough }) => {
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     //setIncrediences(e.target.value);
-    changeDough(e.target.value);
+    changeDough(e.target.value); 
   };
 
   return (
@@ -23,8 +23,6 @@ export const InputDough: React.FC<InputDoughtProps> = ({ pizza,changeDough }) =>
         <ToggleButton value={'2'} onChange={handleChange} >{doughNames[2]}</ToggleButton>
         <ToggleButton value={'3'} onChange={handleChange} >{doughNames[3]}</ToggleButton>
       </ToggleButtonGroup>
-  
-
     </form>
   </div>
   );

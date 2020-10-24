@@ -1,6 +1,6 @@
 
 import React, { useState, ChangeEvent, FormEvent } from "react";
-
+import { Button } from 'reactstrap';
 interface ClosePizzaButtonProps {
   closePizza: AddTodo;
 }
@@ -14,6 +14,6 @@ export const ButtonClosePizza: React.FC<ClosePizzaButtonProps> = ({ closePizza }
   };
 
   return (
-    <button type="submit" onClick={handleSubmit}>Click</button>
+    <Button type="submit" onClick={handleSubmit}>Close Pizza</Button>
   );
 };

@@ -1,9 +1,10 @@
 import React, { useState,useEffect } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image} from 'react-native';
 
 
 import ListIncrediences  from "./Components/Lists/ListIncredinences";
 import ListPizzas  from "./Components/Lists/ListPizzas";
+import ListOrderHistory  from "./Components/Lists/ListOrderHistory";
 
 import {ButtonClosePizza} from "./Components/Buttons/ButtonClosePizza";
 import {ButtonCloseOrder} from "./Components/Buttons/ButtonCloseOrder";
@@ -18,6 +19,8 @@ import {formatPrice} from "./Controllers/PriceController";
 import {pricesIngredients,sizePrizes,doughPrices,typePrices,drinks} from "./config/prices";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './assets/css/App.css';
+
 import { Button } from 'reactstrap';
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
 import ToggleButton from 'react-bootstrap/ToggleButton';
@@ -30,10 +33,11 @@ export default function App() {
   //STORE
   const [incrediences, setIncrediences] = useState<string>("");
   const [orderHistory, setOrderHistory] = useState<OrderHistory>([]);
+/*
   useEffect(() => {
     console.log(orderHistory);
   }, [orderHistory]);
-
+*/
   const [order, setOrder] = useState<Order>(plainOrder);
   useEffect(() => {
     calcOrderPrice();
@@ -95,21 +99,29 @@ export default function App() {
     setIncrediences("");
   }
   return (
-    <div>    
-
-    <Text>PizzaLabCalc</Text>
+    <div className="appContainer container align-items-center">    
+      <img
+        className="logo"
+        src={require('./assets/img/logo.png')} 
+      /> 
+      <h3 className="h3 mb-3 font-weight-normal ">PizzaLabCalc</h3>
       <InputDough changeDough={changeDough} pizza={pizza} />
       <InputSize changeSize={changeSize} pizza={pizza} />
       <InputType changeType={changeType} pizza={pizza} />
       <ListIncrediences pizza={pizza} />
-      <Text>Total: {formatPrice(pizza.price)}</Text>
 
-      <InputIncrediences incrediences={incrediences} changeIncrediences={changeIncrediences}/>
-      <ButtonClosePizza closePizza={closePizza}/>
+      Extra Incrediences: <InputIncrediences incrediences={incrediences} changeIncrediences={changeIncrediences}/>
+      <div>
+        <Text>Total: {formatPrice(pizza.price)}</Text>
+      </div>
+      <div>
+        <ButtonClosePizza closePizza={closePizza}/>
+      </div>
       <hr />
       <ListPizzas order={order} />
       <InputDrinks addDrinkToOrder={addDrinkToOrder} />
       <ButtonCloseOrder closeOrder={closeOrder}/>
+      <ListOrderHistory orderHistory={orderHistory} />
     </div>
 
   );
