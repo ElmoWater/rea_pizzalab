@@ -36,5 +36,5 @@
   "private": true,
   "format": "prettier --write 'src/**/*.{ts,tsx}'",
   "format:check": "prettier -c 'src/**/*.{ts,tsx}'",
-  "homepage": "/docs"
+  "homepage": "https://elmowater.github.io/rea_pizzalab/"
 }
