@@ -11,11 +11,28 @@ const ListPizzas: React.FC<IncrediencesListProps> = ({orderHistory}) => {
   return (
     <div className="mt-5">
       <p>Order History</p>
-      <ul>
+      
+      <table >
         {orderHistory.map((order, index) => (
-          <li key={index}>Order #{index+1}: {formatPrice(order.total)}</li>
+          order.foods.map((pizza,pindex) =>
+            <tr key={pindex} style={{border: "1px solid rgb(0, 0, 0)"}}>
+            <th>Pizza</th>
+            <th>{formatPrice(pizza.price)}</th>
+            <th>19%</th>
+          </tr>
+          )
         ))}
-      </ul>
+        {orderHistory.map((order, index) => (
+          order.drinks.map((drink,pindex) =>
+            <tr key={pindex}>
+            <th>Drink</th>
+            <th>{formatPrice(drink.price)}</th>
+            <th>19%</th>
+          </tr>
+          )
+        ))}  
+      </table>
+
       <p>
         Total: {formatPrice(calculateOrderTotal(orderHistory))}
       </p>

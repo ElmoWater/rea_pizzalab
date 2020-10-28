@@ -1,23 +1,23 @@
 {
   "files": {
-    "app.js": "/rea_pizzalab/static/js/app.365c2b93.chunk.js",
-    "app.js.map": "/rea_pizzalab/static/js/app.365c2b93.chunk.js.map",
+    "app.js": "/rea_pizzalab/static/js/app.7421ab3c.chunk.js",
+    "app.js.map": "/rea_pizzalab/static/js/app.7421ab3c.chunk.js.map",
     "runtime~app.js": "/rea_pizzalab/static/js/runtime~app.2a45170f.js",
     "runtime~app.js.map": "/rea_pizzalab/static/js/runtime~app.2a45170f.js.map",
-    "static/js/2.7f785393.chunk.js": "/rea_pizzalab/static/js/2.7f785393.chunk.js",
-    "static/js/2.7f785393.chunk.js.map": "/rea_pizzalab/static/js/2.7f785393.chunk.js.map",
+    "static/js/2.c2e3262e.chunk.js": "/rea_pizzalab/static/js/2.c2e3262e.chunk.js",
+    "static/js/2.c2e3262e.chunk.js.map": "/rea_pizzalab/static/js/2.c2e3262e.chunk.js.map",
     "favicon-16.png": "/rea_pizzalab/favicon-16.png",
     "favicon-32.png": "/rea_pizzalab/favicon-32.png",
     "favicon.ico": "/rea_pizzalab/favicon.ico",
     "index.html": "/rea_pizzalab/index.html",
     "manifest.json": "/rea_pizzalab/manifest.json",
     "serve.json": "/rea_pizzalab/serve.json",
-    "static/js/2.7f785393.chunk.js.LICENSE.txt": "/rea_pizzalab/static/js/2.7f785393.chunk.js.LICENSE.txt",
+    "static/js/2.c2e3262e.chunk.js.LICENSE.txt": "/rea_pizzalab/static/js/2.c2e3262e.chunk.js.LICENSE.txt",
     "static/media/logo.png": "/rea_pizzalab/static/media/logo.736facda.png"
   },
   "entrypoints": [
     "static/js/runtime~app.2a45170f.js",
-    "static/js/2.7f785393.chunk.js",
-    "static/js/app.365c2b93.chunk.js"
+    "static/js/2.c2e3262e.chunk.js",
+    "static/js/app.7421ab3c.chunk.js"
   ]
 }

@@ -4,19 +4,20 @@ import ToggleButton from 'react-bootstrap/ToggleButton';
 import {typeNames, typePrices} from "../../config/prices";
 
 interface InputTypeProps {
+  type: string,
   pizza: Pizza,
   changeType: ChangeType
 }
 
-export const InputType: React.FC<InputTypeProps> = ({ pizza,changeType }) => {
+export const InputType: React.FC<InputTypeProps> = ({ type,pizza,changeType }) => {
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     changeType(e.target.value);
   };
-
+ 
   return (
     <div>
       <form>
-        <ToggleButtonGroup type='radio' name='size' defaultValue={'0'} className="mt-1">
+        <ToggleButtonGroup type='radio' name='size' defaultValue={'0'} className="mt-1" value={type}>
           <ToggleButton value={'0'} onChange={handleChange} >{typeNames[0]}</ToggleButton>
           <ToggleButton value={'1'} onChange={handleChange} >{typeNames[1]}</ToggleButton>
           <ToggleButton value={'2'} onChange={handleChange} >{typeNames[2]}</ToggleButton>

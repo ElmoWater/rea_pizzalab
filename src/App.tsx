@@ -32,6 +32,9 @@ export default function App() {
   
   //STORE
   const [incrediences, setIncrediences] = useState<string>("");
+  const [dough, setDough] = useState<string>("1");
+  const [size, setSize] = useState<string>("2");
+  const [type, setType] = useState<string>("0");
   const [orderHistory, setOrderHistory] = useState<OrderHistory>([]);
 /*
   useEffect(() => {
@@ -50,12 +53,15 @@ export default function App() {
 
   //FUNCTIONS
   const changeSize:ChangeSize=async(sizeInput)=>{
+    setSize(sizeInput);
     setPizza(prevState => ({ ...prevState, size:parseInt(sizeInput)}));
   }
   const changeType:ChangeSize=async(typeInput)=>{
+    setType(typeInput);
     setPizza(prevState => ({ ...prevState, type:parseInt(typeInput)}));
   }
   const changeDough:ChangeSize=async(doughInput)=>{
+    setDough(doughInput);
     setPizza(prevState => ({ ...prevState, dough:parseInt(doughInput)}));
   }
   const changeIncrediences:ChangeIncrediences=async(incrediencesInput)=>{
@@ -91,13 +97,43 @@ export default function App() {
     setOrder(prevState => ({ ...prevState, foods:newPizzas}));
     setPizza(plainPizza);
     setIncrediences("");
+    setDough("1");
+    setSize("2");
+    setType("0");
+    
+
+    
   }
   const closeOrder = ():void=>{
     setOrderHistory([...orderHistory,order]);
     setOrder(plainOrder);
     setPizza(plainPizza);
     setIncrediences("");
+    setDough("1");
+    setSize("2");
+    setType("0");
   }
+
+
+  
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   return (
     <div className="appContainer container align-items-center">    
       <img
@@ -105,9 +141,9 @@ export default function App() {
         src={require('./assets/img/logo.png')} 
       /> 
       <h3 className="h3 mb-3 font-weight-normal ">PizzaLabCalc</h3>
-      <InputDough changeDough={changeDough} pizza={pizza} />
-      <InputSize changeSize={changeSize} pizza={pizza} />
-      <InputType changeType={changeType} pizza={pizza} />
+      <InputDough dough={dough} changeDough={changeDough} pizza={pizza} />
+      <InputSize size={size} changeSize={changeSize} pizza={pizza} />
+      <InputType type={type} changeType={changeType} pizza={pizza} />
       <ListIncrediences pizza={pizza} />
 
       Extra Incrediences: <InputIncrediences incrediences={incrediences} changeIncrediences={changeIncrediences}/>
@@ -122,12 +158,13 @@ export default function App() {
       <InputDrinks addDrinkToOrder={addDrinkToOrder} />
       <ButtonCloseOrder closeOrder={closeOrder}/>
       <ListOrderHistory orderHistory={orderHistory} />
+     
     </div>
 
   );
 }
 
-const styles = StyleSheet.create({
+const stylesa = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
